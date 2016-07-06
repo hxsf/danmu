@@ -24,11 +24,11 @@ var server = http.Server(app);
 // var server = https.createServer(options, app).listen(443);
 var io = require('socket.io')(server);
 
-server.listen(80);
+server.listen(3001);
 
 io.on('connection', function (socket) {
 	socket.on('my other event', function (data) {
-		console.log(data);
+		// console.log(data);
 	});
 });
 
@@ -52,7 +52,7 @@ app.use(express.query());
 app.use('/wechat', wechat(config, function (req, res, next) {
 	// message is located in req.weixin
 	var message = req.weixin;
-	console.log(message);
+	// console.log(message);
 	switch (message.MsgType) {
 		case 'text':
 			res.reply({content: 'got it', type: 'text'});

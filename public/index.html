@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="/stylesheets/style.css" charset="utf-8">
 </head>
 <body>
-    <div class="top"></div>
+    <div class="top">关注微信公众号 JustNetClub , 即可发送弹幕</div>
     <div class="main"></div>
-    <!-- <img class="qrcode" src="#" alt=" " /> -->
+    <!-- <img class="qrcode" src="/imgs/qrcode.jpg" alt="JustNetClub" /> -->
     <ul class="vip"></ul>
 	<div class="foot"></div>
     <script src="/javascript/jquery.min.js" charset="utf-8"></script>
@@ -29,7 +29,7 @@
             var vip = $('.vip');
             var socket = io.connect();
             socket.on('news', function (data) {
-                console.log(data);
+                // console.log(data);
                 if (data.type === 'text') {
                     var temp = $('<div>' + data.content + '</div>');
             		if(data.vip == 1) {
